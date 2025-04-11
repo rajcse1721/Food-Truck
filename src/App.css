@@ -1,0 +1,163 @@
+/* Header Wrapper */
+.header {
+  display: flex; /* Makes header a flex container */
+  justify-content: space-between; /* Puts space between logo and nav */
+  align-items: center; /* Vertically centers items */
+  padding: 16px 24px; /* Space inside header */
+  margin: 10px; /* Space outside header */
+  border: 1px solid #ddd; /* Light border around header */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  position: sticky; /* Sticks to top when scrolling */
+  top: 0; /* Sticks to top of page */
+  z-index: 1000; /* Keeps it above other content */
+}
+
+/* Navigation List */
+.nav-items > ul {
+  list-style: none; /* Removes default bullets */
+  display: flex; /* Horizontal nav items */
+  gap: 16px; /* Space between nav items */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+/* Each Navigation Item */
+.nav-items > ul > li {
+  padding: 10px 12px; /* Space inside each item */
+  cursor: pointer; /* Pointer on hover */
+  font-weight: 500; /* Slightly bold text */
+  color: #333; /* Dark gray text */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.nav-items > ul > li:hover {
+  color: #ff6f00; /* Orange color on hover */
+  border-bottom: 2px solid #ff6f00; /* Underline effect on hover */
+}
+
+.logo {
+  width: 180px; /* Fixed width for logo */
+  max-width: 100%; /* Prevents overflow */
+  object-fit: contain; /* Keeps aspect ratio */
+}
+/* Mobile Responsive Header */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack logo & nav vertically */
+    align-items: flex-start; /* Align to left */
+    gap: 12px; /* Space between stacked items */
+  }
+
+  .nav-items > ul {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%; /* Full width */
+  }
+
+  .nav-items > ul > li {
+    padding: 8px 0; /* Vertical padding */
+    width: 100%; /* Full width items */
+    border-bottom: 1px solid #eee; /* Divider between items */
+  }
+}
+
+.restrauntant-list {
+  display: flex; /* Flex container for cards */
+  flex-wrap: wrap; /* Wraps cards to next line */
+  justify-content: center; /* Center cards */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding inside container */
+}
+
+.card {
+  width: 260px; /* Fixed card width */
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 12px; /* Rounded corners */
+  overflow: hidden; /* Hides image overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+  background-color: #fff; /* White background */
+  text-align: left; /* Align text to left */
+  cursor: pointer; /* Clickable card */
+}
+
+/* Hover Animation */
+.card:hover {
+  transform: translateY(-6px); /* Lift card up slightly */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+.card img {
+  width: 100%; /* Full width image */
+  height: 160px; /* Fixed height */
+  object-fit: cover; /* Crop image to fit nicely */
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 0 10px;
+  color: #555;
+  font-weight: 400;
+}
+
+.card h4 {
+  margin: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0 10px 10px;
+  color: #777;
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  .restrauntant-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .card {
+    width: 45%; /* 2 cards per row on tablets */
+  }
+}
+
+/* For small screens (phones) */
+@media (max-width: 480px) {
+  .restrauntant-list {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align on small screens */
+  }
+
+  .card {
+    width: 90%; /* Almost full width */
+  }
+}
+
+.footer {
+  display: flex; /* Makes header a flex container */
+  justify-content: space-between; /* Puts space between logo and nav */
+  align-items: center; /* Vertically centers items */
+  padding: 16px 24px; /* Space inside header */
+  margin: 10px; /* Space outside header */
+  border: 1px solid #ddd; /* Light border around header */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  position: sticky; /* Sticks to top when scrolling */
+  top: 0; /* Sticks to top of page */
+  z-index: 1000; /* Keeps it above other content */
+}
