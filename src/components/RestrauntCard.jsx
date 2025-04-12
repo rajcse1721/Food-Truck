@@ -1,27 +1,27 @@
-//instead of doing hardcording
-// const BurgerKing = {
-//   Name: "Burger King",
-//   Image:
-//     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/1/21/5cc80528-07c3-4cb7-995f-db3843e8f22e_672074.JPG",
-//   Cusines: ["classic", "American"],
-//   Rating: 4.3,
-// };
-//import { IMAGE_URL } from "./Config";
-
-const RestrauntCard = (props) => {
-  const restaurantInfo = props.restraunt.card.card.info;
+const RestrauntCard = ({ restraunt }) => {
+  //const restaurantInfo = props.restraunt.card.card.info;
+  const {
+    name,
+    cloudinaryImageId,
+    cuisines,
+    avgRating,
+    costForTwo,
+    areaName,
+    locality,
+  } = restraunt?.info || {};
+  // //= restraunt?.info || {};
   return (
     <div className="card">
       <img
-        alt={restaurantInfo.name}
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurantInfo.cloudinaryImageId}`}
+        alt={name}
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
       />
-      <h2>{restaurantInfo?.name}</h2>
-      <h3>{restaurantInfo?.cuisines.join(", ")}</h3>
-      <h4>{restaurantInfo?.avgRating} stars</h4>
-      <p>{restaurantInfo?.costForTwo}</p>
+      <h2>{name}</h2>
+      <h3>{cuisines?.join(", ")}</h3>
+      <h4>{avgRating} stars</h4>
+      <p>{costForTwo}</p>
       <p>
-        {restaurantInfo?.areaName}, {restaurantInfo.locality}
+        {areaName}, {locality}
       </p>
     </div>
   );

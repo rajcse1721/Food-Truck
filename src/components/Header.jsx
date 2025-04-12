@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Title = () => (
   <a href="/">
     <img className="logo" alt="logo" src="src\logo.png" />
@@ -5,6 +7,7 @@ const Title = () => (
 );
 
 const HeaderComponent = () => {
+  const [userLogedIn, setUserLogedIn] = useState(false);
   return (
     <div className="header">
       <Title />
@@ -15,6 +18,11 @@ const HeaderComponent = () => {
           <li>contact</li>
           <li>Cart</li>
         </ul>
+        {userLogedIn ? (
+          <button onClick={() => setUserLogedIn(false)}>Logout</button>
+        ) : (
+          <button onClick={() => setUserLogedIn(true)}>Login</button>
+        )}
       </div>
     </div>
   );
