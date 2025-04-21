@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Error from "./components/Error";
+import Profile from "./components/Profile";
+import ContactForm from "./components/ContactForm";
 
 export default function AppLayout() {
   return (
@@ -30,6 +32,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
+      },
+      {
+        path: "/contact",
+        element: <ContactForm />,
       },
     ],
   },
