@@ -2,6 +2,7 @@ import { RestrauntList } from "./RestrauntList";
 import RestrauntCard from "./RestrauntCard";
 import { useEffect, useState } from "react";
 import ShimmerCard from "./ShimmerCard";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   //create local state variable in react
@@ -13,6 +14,11 @@ const Body = () => {
   useEffect(() => {
     getRestaurants();
   }, []);
+
+  const Online = useOnline();
+  if (!Online) {
+    return <h1>🔴Offline,Please check your internet connectivity !!!</h1>;
+  }
 
   async function getRestaurants() {
     const response = await fetch(

@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./App.css";
 import HeaderComponent from "./components/Header";
@@ -8,6 +9,10 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Profile from "./components/Profile";
 import ContactForm from "./components/ContactForm";
+import ShimmerCard from "./components/ShimmerCard";
+//import Instamart from "./components/Instamart";
+
+const Instamart = lazy(() => import("./components/Instamart"));
 
 export default function AppLayout() {
   return (
@@ -43,12 +48,16 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <ContactForm />,
       },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<ShimmerCard />}>
+            <Instamart />
+          </Suspense>
+        ),
+      },
     ],
   },
-  // {
-  //   path: "/about",
-  //   element: <About />,
-  // },
 ]);
 
 createRoot(document.getElementById("root")).render(
