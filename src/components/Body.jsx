@@ -1,3 +1,4 @@
+import React from "react";
 import { RestrauntList } from "./RestrauntList";
 import RestrauntCard from "./RestrauntCard";
 import { useEffect, useState } from "react";
@@ -48,9 +49,10 @@ const Body = () => {
     <ShimmerCard />
   ) : (
     <>
-      <div className="search-input">
+      <div className="flex justify-center items-center flex-wrap gap-3 p-3 max-w-[600px] mx-auto my-6">
         <input
           type="text"
+          className="flex-1 min-w-[240px] px-3.5 py-2.5 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-shadow duration-300"
           placeholder="Search restaurants..."
           value={searchInput}
           onChange={(e) => {
@@ -58,7 +60,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="bg-orange-500 text-white px-4 py-2.5 text-base rounded-lg cursor-pointer transition-colors duration-300 hover:bg-orange-600"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
             setFilteredRestaurants(data);
@@ -67,7 +69,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restrauntant-list">
+      <div className="flex flex-wrap justify-center gap-5 p-5">
         {filteredRestaurants.length === 0 ? (
           <>
             <h3>😔Oops, NO RESULTS FOUND.</h3>
