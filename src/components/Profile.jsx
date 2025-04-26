@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const profile = (props) => {
+const Profile = (props) => {
   const [count, setCount] = useState(0);
   // const [count2, setCount2] = useState(2);
   return (
@@ -19,4 +19,4 @@ const profile = (props) => {
     </div>
   );
 };
-export default profile;
+export default Profile;

@@ -1,34 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+
+const Section = ({ title, description }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  return (
+    <div className="border border-black p-2 m-2">
+      <h3 className="font-bold text-xl">{title}</h3>
+      {isVisible ? (
+        <button
+          onClick={() => setIsVisible(false)}
+          className="cursor-pointer underline"
+        >
+          Hide
+        </button>
+      ) : (
+        <button
+          onClick={() => setIsVisible(true)}
+          className="cursor-pointer underline"
+        >
+          Show
+        </button>
+      )}
+      {isVisible && <p>{description}</p>}
+    </div>
+  );
+};
 const Instamart = () => {
   return (
-    <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-md shadow-md max-w-xl mx-auto mt-6">
-      <div className="flex items-center gap-3">
-        <svg
-          className="w-6 h-6 text-yellow-600"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"
-          />
-        </svg>
-        <div>
-          <p className="font-semibold">Coming Soon</p>
-          <p className="text-md">
-            We are currently working on this feature. It will be available
-            soon...
-          </p>
-          <p className="text-sm">
-            If you have any concern/suggestion , please feel free to send Email
-            over "rajeshcse1721@gmail.com"😊 <br />
-            THANK YOU.
-          </p>
-        </div>
-      </div>
+    <div>
+      <h1 className="text-3xl p-2 m-2 font-bold">Instamart</h1>
+      <Section
+        title={"About Instamart"}
+        description={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        }
+      />
+
+      <Section
+        title={"Team Instamart"}
+        description={
+          "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+        }
+      />
+
+      <Section
+        title={"Carrer"}
+        description={
+          "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words et"
+        }
+      />
+
+      <Section
+        title={"Contact"}
+        description={
+          "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+        }
+      />
     </div>
   );
 };
