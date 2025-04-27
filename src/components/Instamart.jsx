@@ -28,8 +28,8 @@ const Instamart = () => {
   const [sectionConfig, setSectionConfig] = useState({
     showAbout: true,
     showTeam: false,
-    showCareer: true,
-    showContact: true,
+    showCareer: false,
+    showContact: false,
   });
   return (
     <div>
@@ -46,6 +46,8 @@ const Instamart = () => {
             showTeam: false,
             showCareer: false,
             showContact: false,
+            showProduct: false,
+            showVendor: false,
           })
         }
       />
@@ -61,6 +63,8 @@ const Instamart = () => {
             showTeam: true,
             showCareer: false,
             showContact: false,
+            showProduct: false,
+            showVendor: false,
           })
         }
       />
@@ -76,6 +80,42 @@ const Instamart = () => {
             showTeam: false,
             showCareer: true,
             showContact: false,
+            showProduct: false,
+            showVendor: false,
+          })
+        }
+      />
+      <Section
+        title={"Product"}
+        description={
+          "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words et"
+        }
+        isVisible={sectionConfig.showProduct}
+        setIsVisible={() =>
+          setSectionConfig({
+            showAbout: false,
+            showTeam: false,
+            showCareer: false,
+            showContact: false,
+            showProduct: true,
+            showVendor: false,
+          })
+        }
+      />
+      <Section
+        title={"Vendor"}
+        description={
+          "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words et"
+        }
+        isVisible={sectionConfig.showVendor}
+        setIsVisible={() =>
+          setSectionConfig({
+            showAbout: false,
+            showTeam: false,
+            showCareer: false,
+            showContact: false,
+            showProduct: false,
+            showVendor: true,
           })
         }
       />
