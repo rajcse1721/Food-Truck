@@ -8,8 +8,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Error from "./components/Error";
 import Profile from "./components/Profile";
-import ContactForm from "./components/ContactForm";
 import ShimmerCard from "./components/ShimmerCard";
+import ContactPage from "./components/ContactPage";
 //import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -46,7 +46,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactForm />,
+        element: <ContactPage />,
       },
       {
         path: "/instamart",

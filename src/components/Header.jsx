@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import LoginModal from "./LoginModel";
 import logo from "../assets/logo.png";
+import UserContext from "../utils/UserContext";
 
 const Title = () => (
   <a href="/">
@@ -17,7 +18,7 @@ const Title = () => (
 
 const HeaderComponent = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const { user } = useContext(UserContext);
   const isOnline = useOnline();
   return (
     <div className="flex justify-between items-center p-4 md:p-6 m-2.5 border border-gray-300 rounded-lg bg-white shadow-md sticky top-0 z-[1000]">
@@ -51,6 +52,7 @@ const HeaderComponent = () => {
           </Link>
         </ul>
         <h1>{isOnline ? "🟢" : "🔴"}</h1>
+        {user.name}
         <div className="p-10">
           <button
             className="bg-blue-600 text-white px-4 py-2 rounded"
